@@ -3,12 +3,14 @@ import { prisma } from '@/lib/prisma';
 import { realtimeManager } from '@/lib/realtime';
 import { encrypt, decrypt, generateUserId } from '@/lib/encryption';
 
+type ExpenseSplitInput = { userId: string; amount: number | string };
+
 export async function GET(request: NextRequest) {
   try {
     const { searchParams } = new URL(request.url);
     const groupId = searchParams.get('groupId');
 
-    const whereClause: any = {};
+    const whereClause: { groupId?: string } = {};
 
     if (groupId) {
       whereClause.groupId = groupId;
@@ -113,9 +115,9 @@ export async function POST(request: NextRequest) {
         paidById: paidByUser.id,
         groupId,
         splits: {
-          create: splits.map((split: any) => ({
+          create: (splits as ExpenseSplitInput[]).map((split) => ({
             userId: split.userId,
-            amount: parseFloat(split.amount),
+            amount: parseFloat(String(split.amount)),
           })),
         },
       },

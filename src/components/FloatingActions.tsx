@@ -28,18 +28,18 @@ const FloatingActions = ({ onAddExpense, onCreateGroup }: FloatingActionsProps) 
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: index * 0.1 }}
             >
-              <Button
-                onClick={action.onClick}
-                className={`w-14 h-14 rounded-full shadow-lg hover:shadow-xl ${
-                  action.primary 
-                    ? 'bg-primary hover:bg-primary/90 text-black' 
-                    : 'bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300'
-                }`}
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
-              >
-                <Icon className="w-6 h-6" />
-              </Button>
+              <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+                <Button
+                  onClick={action.onClick}
+                  className={`w-14 h-14 rounded-full shadow-lg hover:shadow-xl ${
+                    action.primary 
+                      ? 'bg-primary hover:bg-primary/90 text-black' 
+                      : 'bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300'
+                  }`}
+                >
+                  <Icon className="w-6 h-6" />
+                </Button>
+              </motion.div>
             </motion.div>
           );
         })}

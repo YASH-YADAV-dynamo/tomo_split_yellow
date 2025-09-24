@@ -13,7 +13,9 @@ export async function POST(request: NextRequest) {
     }
 
     // Convert slug back to group name
-    const groupName = groupSlug.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+    const groupName = groupSlug
+      .replace(/-/g, ' ')
+      .replace(/\b\w/g, (letter: string) => letter.toUpperCase());
 
     // Find the group by name
     const group = await prisma.group.findFirst({
