@@ -21,5 +21,8 @@ Send one payment → split across recipients → settled across chains, with LPs
 ## Product AMM diagram
 <img width="1024" height="1024" alt="Generated Image September 25, 2025 - 9_07AM" src="https://github.com/user-attachments/assets/70010aeb-4591-497a-a917-7d28d0c3b907" />
 
+## 📄 Whitepaper
+[Read the Whitepaper](https://docs.google.com/document/d/1EaIwr22PAh9p6Jk28IQC3g9Q9wdpr8kppWd-xWP9oVo/edit?usp=sharing)
+
 
 
