@@ -7,6 +7,7 @@ import Sidebar from './Sidebar';
 import AddExpenseModal from './AddExpenseModal';
 import CreateGroupModal from './CreateGroupModal';
 import FloatingActions from './FloatingActions';
+import SettleDuesModal from './SettleDuesModal';
 import WalletConnect from './WalletConnect';
 
 interface LayoutProps {
@@ -17,6 +18,7 @@ const Layout = ({ children }: LayoutProps) => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [isAddExpenseModalOpen, setIsAddExpenseModalOpen] = useState(false);
   const [isCreateGroupModalOpen, setIsCreateGroupModalOpen] = useState(false);
+  const [isSettleModalOpen, setIsSettleModalOpen] = useState(false);
 
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
@@ -89,6 +91,7 @@ const Layout = ({ children }: LayoutProps) => {
       <FloatingActions 
         onAddExpense={() => setIsAddExpenseModalOpen(true)}
         onCreateGroup={() => setIsCreateGroupModalOpen(true)}
+        onSettle={() => setIsSettleModalOpen(true)}
       />
 
       {/* Add Expense Modal */}
@@ -101,6 +104,12 @@ const Layout = ({ children }: LayoutProps) => {
       <CreateGroupModal 
         isOpen={isCreateGroupModalOpen}
         onClose={() => setIsCreateGroupModalOpen(false)}
+      />
+
+      {/* Settle Dues Modal */}
+      <SettleDuesModal 
+        isOpen={isSettleModalOpen}
+        onClose={() => setIsSettleModalOpen(false)}
       />
     </div>
   );

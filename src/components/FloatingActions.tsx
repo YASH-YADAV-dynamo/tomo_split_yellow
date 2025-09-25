@@ -7,13 +7,14 @@ import Button from './ui/Button';
 interface FloatingActionsProps {
   onAddExpense: () => void;
   onCreateGroup: () => void;
+  onSettle?: () => void;
 }
 
-const FloatingActions = ({ onAddExpense, onCreateGroup }: FloatingActionsProps) => {
+const FloatingActions = ({ onAddExpense, onCreateGroup, onSettle }: FloatingActionsProps) => {
   const actions = [
     { icon: Receipt, label: 'Add Expense', onClick: onAddExpense, primary: true },
     { icon: Users, label: 'Create Group', onClick: onCreateGroup },
-    { icon: CreditCard, label: 'Settlements', onClick: () => console.log('Settlements') },
+    { icon: CreditCard, label: 'Settlements', onClick: onSettle || (() => {}) },
   ];
 
   return (
