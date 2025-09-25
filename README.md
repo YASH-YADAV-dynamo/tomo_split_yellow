@@ -13,9 +13,13 @@ Send one payment → split across recipients → settled across chains, with LPs
 ## Architecture
 
 
+<img width="836" height="612" alt="image" src="https://github.com/user-attachments/assets/0ecd3236-cdac-42d6-a899-520dd252106d" />
+
+
 <img width="1213" height="761" alt="image" src="https://github.com/user-attachments/assets/63365623-ff32-4dd3-980c-63cb5c6e274f" />
 
 ## Product AMM diagram
-<img width="1024" height="1024" alt="Generated Image September 25, 2025 - 9_01AM" src="https://github.com/user-attachments/assets/becff414-c958-4965-9e58-4855af373612" />
+<img width="1024" height="1024" alt="Generated Image September 25, 2025 - 9_07AM" src="https://github.com/user-attachments/assets/70010aeb-4591-497a-a917-7d28d0c3b907" />
+
 
 
